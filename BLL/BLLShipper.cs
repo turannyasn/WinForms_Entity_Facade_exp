@@ -2,6 +2,7 @@
 using Facade;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -81,5 +82,12 @@ namespace BLL
 
             return sonuc;
         }
+        public static SqlDataReader doldur(Eshipper shipper)
+        {
+            SqlDataReader dr;
+            dr=Fshipper.doldur(shipper);
+            return dr; 
+        }
     }
 }
+    

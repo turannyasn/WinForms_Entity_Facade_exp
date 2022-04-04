@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 
 namespace Facade
@@ -17,6 +18,7 @@ namespace Facade
             bool sonuc;
             SqlConnection conn = new SqlConnection(Connection.GetConnectionString);
             SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "pr_insert";
             SqlParameter[] param = {
@@ -66,6 +68,7 @@ namespace Facade
             bool sonuc;
             SqlConnection conn = new SqlConnection(Connection.GetConnectionString);
             SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "pr_update";
             SqlParameter[] param = {
@@ -114,6 +117,7 @@ namespace Facade
             bool sonuc;
             SqlConnection conn = new SqlConnection(Connection.GetConnectionString);
             SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.CommandText = "pr_del";
             SqlParameter param = 
@@ -147,6 +151,34 @@ namespace Facade
                 }
             }
             return sonuc;
+
+        }
+        public static SqlDataReader doldur(Eshipper shipper)
+        {
+            SqlDataReader dr;
+            SqlConnection conn = new SqlConnection(Connection.GetConnectionString);
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conn;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandText = "pr_doldur";
+            cmd.Parameters.AddWithValue("ShipperID", shipper.ShipperID);
+
+            try
+            {
+                if (conn.State!=ConnectionState.Open)
+                {
+                    conn.Open();
+                }
+                dr= cmd.ExecuteReader();
+                return dr;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
 
         }
     }

@@ -1,7 +1,7 @@
 ﻿
 namespace Windows_UI
 {
-    partial class Form1
+    partial class Form_Update
     {
         /// <summary>
         /// Required designer variable.
@@ -71,6 +71,7 @@ namespace Windows_UI
             this.textBox1_guncelle_id.Name = "textBox1_guncelle_id";
             this.textBox1_guncelle_id.Size = new System.Drawing.Size(135, 20);
             this.textBox1_guncelle_id.TabIndex = 3;
+            this.textBox1_guncelle_id.TextChanged += new System.EventHandler(this.textBox1_guncelle_id_TextChanged);
             // 
             // textBox2_guncelle_ad
             // 
@@ -94,8 +95,9 @@ namespace Windows_UI
             this.button1_guncelle_kaydet.TabIndex = 6;
             this.button1_guncelle_kaydet.Text = "Guncelle";
             this.button1_guncelle_kaydet.UseVisualStyleBackColor = true;
+            this.button1_guncelle_kaydet.Click += new System.EventHandler(this.button1_guncelle_kaydet_Click_1);
             // 
-            // Form1
+            // Form_Update
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -107,8 +109,8 @@ namespace Windows_UI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "Form_Update";
+            this.Text = "Kayıt Güncelle";
             this.ResumeLayout(false);
             this.PerformLayout();
 

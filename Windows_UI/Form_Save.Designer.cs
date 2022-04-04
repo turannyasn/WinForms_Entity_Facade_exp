@@ -1,7 +1,7 @@
 ﻿
 namespace Windows_UI
 {
-    partial class Form2
+    partial class Form_Save
     {
         /// <summary>
         /// Required designer variable.
@@ -78,7 +78,7 @@ namespace Windows_UI
             this.label2.TabIndex = 8;
             this.label2.Text = "Şirket Ad";
             // 
-            // Form2
+            // Form_Save
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -88,8 +88,8 @@ namespace Windows_UI
             this.Controls.Add(this.textBox2_kaydet_ad);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Name = "Form2";
-            this.Text = "Form2";
+            this.Name = "Form_Save";
+            this.Text = "Kayıt Ekleme";
             this.ResumeLayout(false);
             this.PerformLayout();
 
